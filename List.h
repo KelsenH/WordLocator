@@ -13,7 +13,7 @@ class List
   public:
     List (void);
     List (List_Node & head);
-    void insert (List_Node node);
+    void insert (List_Node & node);
     std::string print_list ();
 
   protected:

@@ -11,11 +11,12 @@ List_Node::List_Node (int line_num)
 
 void List_Node::set_next (List_Node & node)
   {
-    this -> next = node;    
+    this -> next = & node;    
   }
 
 List_Node &  List_Node::get_next (void)
 {
+  if ()
   return *next;
 }
 
