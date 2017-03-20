@@ -1,0 +1,25 @@
+// $Id: assignment2.mpc 378 2010-02-07 22:09:38Z hillj $
+
+project (word_locator) {
+  exename = WL
+  install = .
+ 
+  Source_Files {
+    driver.cpp
+    List_Node.cpp
+    List.cpp
+  }
+
+  Template_Files {
+    
+  }
+
+  Header_Files {
+    List_Node.h 
+    List.h
+  }
+
+  Inline_Files {
+    
+  }
+}
