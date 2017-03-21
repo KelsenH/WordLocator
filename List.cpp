@@ -33,8 +33,8 @@ void List::insert (List_Node & node)
     else
     {
       List_Node * current = head_;
-      List_Node * current_prev = 0;
-      while (current -> get_line_num () < node_line_num && current != NULL)
+      List_Node * current_prev = head_;
+      while (current -> get_line_num () < node_line_num && current -> get_next() != NULL)
       {
         current_prev = current;
         current = current -> get_next ();
