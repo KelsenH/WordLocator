@@ -17,6 +17,8 @@ class BST_Node
     void set_left (BST_Node & left);
     void set_right (BST_Node & right);
     std::string print_line_numbers (void);
+    std::string get_word (void);
+    void insert (std::string word, int line_num);
     
   protected:
     std::string word_;

@@ -9,6 +9,7 @@ project (word_locator) {
     List_Node.cpp
     List.cpp
     BST_Node.cpp
+    BST.cpp
   }
 
   Template_Files {
@@ -19,6 +20,7 @@ project (word_locator) {
     List_Node.h 
     List.h
     BST_Node.h
+    BST.h
   }
 
   Inline_Files {

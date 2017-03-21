@@ -1,15 +1,14 @@
 #include <iostream>
-#include "BST_Node.h"
+#include "BST.h"
 
 int main (void)
 {
-  BST_Node test ("Kelsen");
-  test.append (7);
-  test.append (8);
-  test.append (99);
-  BST_Node test_two ("Hi");
-  BST_Node test_three ("HELLO");
-  test.set_left (test_two);
-  test.set_right (test_three);
-  std::cout << test.print_line_numbers ();
+  BST test;
+  test.insert ("Kelsen", 7);
+  test.insert ("Kelsen", 3);
+  if (test.find ("Kelsen"))
+  {
+    std::cout << test.find_min ().print_line_numbers();
+  }
+  return 0;
 }

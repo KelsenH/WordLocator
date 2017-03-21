@@ -32,3 +32,42 @@ std::string BST_Node::print_line_numbers (void)
 {
   return line_numbers_.print_list ();
 }
+
+std::string BST_Node::get_word (void)
+{
+  return this -> word_;
+}
+
+void BST_Node::insert (std::string word, int line_num)
+{
+  std::string curr_word = this -> get_word ();
+  if (word == curr_word)
+  {
+    this -> append (line_num);
+  }
+
+  else if (word < curr_word)
+  {
+    if (this -> left_ == NULL)
+    {
+      left_ = new BST_Node (word);
+      left_ -> append (line_num);
+    }
+    else 
+    {
+      left_ -> insert (word, line_num);
+    }
+  }
+  else if (word > curr_word)
+  {
+    if (this -> right_ == NULL)
+    {
+      right_ = new BST_Node (word);
+      right_ -> append (line_num);
+    }
+    else
+    {
+      right_ -> insert (word, line_num);
+    }
+  }
+}
