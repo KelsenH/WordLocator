@@ -14,10 +14,9 @@ void List_Node::set_next (List_Node & node)
     this -> next = & node;    
   }
 
-List_Node &  List_Node::get_next (void)
+List_Node *  List_Node::get_next (void)
 {
-  if ()
-  return *next;
+  return next;
 }
 
 int List_Node::get_line_num (void)

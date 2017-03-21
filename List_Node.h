@@ -11,7 +11,7 @@ class List_Node
   public:
     List_Node (int line_num);
     void set_next (List_Node & node);
-    List_Node & get_next ();
+    List_Node * get_next ();
     int get_line_num (void);
     
   protected:

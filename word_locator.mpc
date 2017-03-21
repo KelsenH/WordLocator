@@ -8,6 +8,7 @@ project (word_locator) {
     driver.cpp
     List_Node.cpp
     List.cpp
+    BST_Node.cpp
   }
 
   Template_Files {
@@ -17,6 +18,7 @@ project (word_locator) {
   Header_Files {
     List_Node.h 
     List.h
+    BST_Node.h
   }
 
   Inline_Files {

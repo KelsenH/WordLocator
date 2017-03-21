@@ -34,14 +34,14 @@ void List::insert (List_Node & node)
     else
     {
       
-      List_Node current = * head_;
-      while (current.get_line_num () < node_line_num)
+      List_Node * current = head_;
+      while (current -> get_line_num () < node_line_num && current -> get_next () != NULL)
       {
-        current = current.get_next ();
+        current = current -> get_next ();
       }
-      List_Node current_next = current.get_next ();
-      current.set_next (node);
-      node.set_next (current_next);
+      List_Node * current_next = current -> get_next ();
+      current -> set_next (node);
+      node.set_next (*current_next);
       list_length_ ++;
     }
   }
@@ -49,5 +49,14 @@ void List::insert (List_Node & node)
 
 std::string List::print_list (void)
 {
-  std::cout << head_ -> get_line_num ();
+  std::ostringstream output;
+  List_Node * current = head_;
+
+  while (current != NULL)
+  {
+    output << current -> get_line_num ();
+    output << " ";
+    current = current -> get_next ();
+  }
+  return output.str ();
 }

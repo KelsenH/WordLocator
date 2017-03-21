@@ -1,13 +1,15 @@
-#include "List.h"
-#include "List_Node.h"
 #include <iostream>
+#include "BST_Node.h"
 
 int main (void)
 {
-  List test;
-  List_Node node_one (7);
-  List_Node node_two (8);
-  test.insert (node_one);
-  test.insert (node_two);
-  //std::cout << test.print_list (); 
+  BST_Node test ("Kelsen");
+  test.append (7);
+  test.append (8);
+  test.append (99);
+  BST_Node test_two ("Hi");
+  BST_Node test_three ("HELLO");
+  test.set_left (test_two);
+  test.set_right (test_three);
+  std::cout << test.print_line_numbers ();
 }
