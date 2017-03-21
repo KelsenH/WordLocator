@@ -26,20 +26,21 @@ void List::insert (List_Node & node)
     int node_line_num = node.get_line_num ();
     if (node_line_num <= head_ -> get_line_num ())
     {
-      //std::cout << node_line_num << " " << head_ -> get_line_num ();
       node.set_next (*head_);
-      head_ -> set_next (node);
+      head_ = &node;
       list_length_ ++;
     }
     else
     {
       List_Node * current = head_;
+      List_Node * current_prev = 0;
       while (current -> get_line_num () < node_line_num && current != NULL)
       {
+        current_prev = current;
         current = current -> get_next ();
       }
-      List_Node * current_next = current -> get_next ();
-      current -> set_next (node);
+      List_Node * current_next = current_prev -> get_next ();
+      current_prev -> set_next (node);
       node.set_next (*current_next);
       list_length_ ++;
     }
