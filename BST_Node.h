@@ -10,6 +10,7 @@
 
 class BST_Node 
 {
+  friend class BST;
   public:
     BST_Node (std::string word);
     //Possibly add constructor with left and right later
@@ -19,8 +20,8 @@ class BST_Node
     std::string print_line_numbers (void);
     std::string get_word (void);
     void insert (std::string word, int line_num);
-    
-  protected:
+   
+  protected: 
     std::string word_;
     BST_Node * left_;
     BST_Node * right_;
