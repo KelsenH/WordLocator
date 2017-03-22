@@ -20,6 +20,8 @@ class BST_Node
     std::string print_line_numbers (void);
     std::string get_word (void);
     void insert (std::string word, int line_num);
+    BST_Node * remove (std::string word, BST_Node * parent);
+    std::string get_min (void);
    
   protected: 
     std::string word_;

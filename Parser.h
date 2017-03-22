@@ -6,17 +6,26 @@
 #define PARSER_H
 
 #include "BST.h"
+#include "BST_Node.h"
 #include <fstream>
+#include <iostream>
+#include <string>
 
 class Parser
 {
   public:
-    Parser (std::ifstream);
+    Parser (std::string in);
     void parse_file (void);
 
   protected:
     BST tree;
     std::ifstream infile;
     std::ofstream outfile;
-    std::string current_token;  
+    char curr_char;
+    std::string current_token; 
+    std::string current_line;
+    char delimiter;
+    int line_num; 
 };
+
+#endif

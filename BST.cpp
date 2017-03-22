@@ -52,6 +52,7 @@ bool BST::find_ (std::string word, BST_Node * node)
   {
     find_ (word, node -> right_);
   }
+  else {return false;}
 }
 
 bool BST::find (std::string word)
@@ -77,4 +78,31 @@ BST_Node & BST::find_max (void)
     current = current -> right_;
   }
   return *current;
+}
+
+void BST::delete_node (std::string word)
+{
+  if (root_ -> get_word () == word)
+  {
+    BST_Node temp ("");
+    temp.left_ = root_;
+    BST_Node * removed = root_ -> remove (word, &temp);
+    root_ = temp.left_;
+    if (removed != NULL)
+    {
+      delete removed;
+    }
+    else {}
+  }
+  else
+  {
+    BST_Node * removed = root_ -> remove (word, NULL);
+    {
+      if (removed != NULL)
+      {
+        delete removed;
+      }
+      else {}
+    }
+  }
 }

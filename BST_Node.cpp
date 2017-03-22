@@ -71,3 +71,53 @@ void BST_Node::insert (std::string word, int line_num)
     }
   }
 }
+
+BST_Node * BST_Node::remove (std::string word, BST_Node * parent)
+{
+  if (word < this -> word_)
+  {
+    if (this -> left_ != NULL)
+    {
+      return left_ -> remove (word, this);
+    }
+    else {return NULL;}
+  }
+  else if (word > this -> word_)
+  {
+    if (this -> right_ != NULL)
+    {
+      return right_ -> remove (word, this);
+    }
+    else {return NULL;}
+  }
+  else 
+  {
+    if (left_ != NULL && right_ != NULL)
+    {
+      this -> word_ = right_ -> get_min ();
+      return right_ -> remove (this -> word_, this);
+    }
+    else if (parent -> left_ == this)
+    {
+      parent -> left_ = (left_ != NULL) ? left_ : right_;
+      return this;
+    }
+    else if (parent -> right_ == this)
+    {
+      parent -> right_ = (left_ != NULL) ? left_ : right_;
+      return this;
+    }
+  }
+}
+
+std::string BST_Node::get_min (void)
+{
+  if (left_ == NULL)
+  {
+    return word_;
+  }
+  else
+  {
+    return left_ -> get_min ();
+  }
+}
